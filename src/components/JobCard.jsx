@@ -29,6 +29,7 @@ const JobCard = ({ job, candidate, onApply }) => {
         uuid: candidate.uuid,
         jobId: job.id,
         candidateId: candidate.candidateId,
+        applicationId: candidate.applicationId,
         repoUrl: repoUrl,
       };
 
@@ -54,7 +55,7 @@ const JobCard = ({ job, candidate, onApply }) => {
       {status === "success" ? (
         <div className="status-success">✅ ¡Postulación enviada con éxito!</div>
       ) : (
-        
+
         <form onSubmit={handleSubmit} className="job-form">
           <label htmlFor={`url-${job.id}`}>Repositorio GitHub:</label>
           <input
